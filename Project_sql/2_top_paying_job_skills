@@ -1,0 +1,61 @@
+SELECT
+job_postings_fact.job_id,
+job_title,
+job_location,
+salary_year_avg,
+job_schedule_type,
+skills
+FROM 
+job_postings_fact
+INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
+INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+WHERE
+ job_location = 'Anywhere'
+AND job_title = 'Data Analyst'
+AND salary_year_avg is not NULL
+ORDER BY
+ salary_year_avg DESC
+LIMIT
+ 10;
+
+
+WITH top_paying_jobs AS (
+    SELECT
+        job_id,
+        job_title,
+        salary_year_avg
+        -- name AS company_name
+    FROM
+        job_postings_fact
+    -- LEFT JOIN company_dim ON job_postings_fact.company_id = company_dim.company_id
+    WHERE
+        job_title_short = 'Data Analyst'
+				AND salary_year_avg IS NOT NULL
+        AND job_location = 'Anywhere'
+    ORDER BY
+        salary_year_avg DESC
+    LIMIT 10
+)
+-- Skills required for data analyst jobs
+SELECT
+    top_paying_jobs.job_id,
+    job_title,
+    salary_year_avg,
+    skills
+FROM
+    top_paying_jobs
+	INNER JOIN
+    skills_job_dim ON top_paying_jobs.job_id = skills_job_dim.job_id
+	INNER JOIN
+    skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+ORDER BY
+    salary_year_avg DESC;
+
+   
+   Key Insights
+
+Core Trifecta (SQL, Python, Tableau): SQL is mandatory across 100% of these roles, closely followed by Python (88%) and Tableau (75%). Together, they define the baseline technical stack for top-tier compensation.
+
+Modern Cloud Warehousing Over Spreadsheets: Snowflake appears as frequently as Excel (37.5%), highlighting that higher-paying analytics roles emphasize scalable, cloud-native warehouses over local reporting tools.
+
+Engineering & Collaboration Standards: Tools like Git/GitLab/Bitbucket, Jira/Confluence, and cloud platforms (AWS/Azure) are prevalent among Director and Principal-level listings, indicating a shift toward data-engineering workflows, version-controlled analysis, and cross-functional leadership. 

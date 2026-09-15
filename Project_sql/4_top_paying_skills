@@ -1,0 +1,25 @@
+SELECT
+  skills_dim.skills,
+  COUNT(skills_job_dim.job_id) AS demand_count,
+  ROUND(AVG(salary_year_avg), 0) AS Top_paying_skills
+FROM
+  job_postings_fact
+  INNER JOIN
+    skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
+  INNER JOIN
+    skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+WHERE
+  job_postings_fact.job_title_short = 'Data Analyst'
+ AND salary_year_avg IS NOT NULL
+ AND job_work_from_home = TRUE
+GROUP BY
+  skills_dim.skills
+ORDER BY
+  Top_paying_skills DESC
+LIMIT 25;
+
+High Demand for Big Data & ML Skills: Top salaries are commanded by analysts skilled in big data processing (PySpark, Couchbase), machine learning tools (DataRobot, Jupyter), and core Python data libraries (Pandas, NumPy), reflecting a high market premium on advanced modeling and large-scale data manipulation.
+
+Software Development & Deployment Proficiency: Knowledge of version control, CI/CD, and orchestration tools (Bitbucket, GitLab, Kubernetes, Airflow, Jenkins) indicates a lucrative overlap with data engineering and DevOps, where automation and reliable pipeline management drive significant value.
+
+Cloud Computing & Modern Data Platforms: Expertise across cloud-based analytics environments and data infrastructure (Databricks, GCP, Elasticsearch, PostgreSQL) underscores that enterprise migration to distributed cloud architectures directly boosts an analyst’s earning potential.
