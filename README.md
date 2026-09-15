@@ -23,5 +23,51 @@ In this project, I utilized a variety of tools to conduct my analysis:
 - **Visual Studio Code:** This open-source administration and development platform helped me manage the database and execute SQL queries.
 - 
 # The Analysis
+
+Each query for this project aimed at investigating specific aspects of the data analyst job market. Here’s how I approached each question:
+
+### 1. Top Paying Data Analyst Jobs
+
+To identify the highest-paying roles, I filtered data analyst positions by average yearly salary and location, focusing on remote jobs. This query highlights the high paying opportunities in the field.
+
+### 2. Skills for Top Paying Jobs
+
+To understand what skills are required for the top-paying jobs, I joined the job postings with the skills data, providing insights into what employers value for high-compensation roles.
+
+### 3. In-Demand Skills for Data Analysts
+
+This query helped identify the skills most frequently requested in job postings, directing focus to areas with high demand.
+
+### 4. Skills Based on Salary
+
+Exploring the average salaries associated with different skills revealed which skills are the highest paying.
+
+### 5. Most Optimal Skills to Learn
+
+Combining insights from demand and salary data, this query aimed to pinpoint skills that are both in high demand and have high salaries, offering a strategic focus for skill development.
+
+Each query not only served to answer a specific question but also to improve my understanding of SQL and database analysis. Through this project, I learned to leverage SQL's powerful data manipulation capabilities to derive meaningful insights from complex datasets.
+
 # What I Learned
+
+Throughout this project, I honed several key SQL techniques and skills:
+
+- **Complex Query Construction**: Learning to build advanced SQL queries that combine multiple tables and employ functions like **`WITH`** clauses for temporary tables.
+- **Data Aggregation**: Utilizing **`GROUP BY`** and aggregate functions like **`COUNT()`** and **`AVG()`** to summarize data effectively.
+- **Analytical Thinking**: Developing the ability to translate real-world questions into actionable SQL queries that got insightful answers.
+
+  ### **Insights**
+
+From the analysis, several general insights emerged:
+
+1. **Top-Paying Data Analyst Jobs**: The highest-paying jobs for data analysts that allow remote work offer a wide range of salaries, the highest at $650,000!
+2. **Skills for Top-Paying Jobs**: High-paying data analyst jobs require advanced proficiency in SQL, suggesting it’s a critical skill for earning a top salary.
+3. **Most In-Demand Skills**: SQL is also the most demanded skill in the data analyst job market, thus making it essential for job seekers.
+4. **Skills with Higher Salaries**: Specialized skills, such as SVN and Solidity, are associated with the highest average salaries, indicating a premium on niche expertise.
+5. **Optimal Skills for Job Market Value**: SQL leads in demand and offers for a high average salary, positioning it as one of the most optimal skills for data analysts to learn to maximize their market value.
+   
 # Conclusions
+
+This project enhanced my SQL skills and provided valuable insights into the data analyst job market. The findings from the analysis serve as a guide to prioritizing skill development and job search efforts. Aspiring data analysts can better position themselves in a competitive job market by focusing on high-demand, high-salary skills. This exploration highlights the importance of continuous learning and adaptation to emerging trends in the field of data analytics.
+
+
